@@ -760,6 +760,13 @@ Guacamole.Client = function(tunnel) {
     this.onargv = null;
 
     /**
+     * Fired when the clipboard of the remote client becomes operational.
+     *
+     * @event
+     */
+    this.onclipboardoperational = null;
+
+    /**
      * Fired when the clipboard of the remote client is changing.
      * 
      * @event
@@ -1093,6 +1100,10 @@ Guacamole.Client = function(tunnel) {
 
             display.clip(layer);
 
+        },
+
+        "clipboard_operational": function() {
+            if (guac_client.onclipboardoperational) guac_client.onclipboardoperational();
         },
 
         "clipboard": function(parameters) {
