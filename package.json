@@ -1,6 +1,6 @@
 {
   "name": "guacamole-common-js",
-  "version": "1.4.0",
+  "version": "1.4.0-a",
   "main": "dist/guacamole-common-js.js",
   "devDependencies": {
     "concat": "^1.0.3",
