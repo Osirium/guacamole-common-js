@@ -8,6 +8,12 @@ Commands:
 `npm pack` - generate npm installable .tgz
 `npm run publish` - publish guacamole-common-js to github registry tag
 
+With added features:
+* "clipboard_operational" instruction event handler can be used to determine
+    there is functional end-to-end clipboard support.
+* "clipboard_remote_update" instruction event handler can be user to determine
+    when a remote clipboard has acknowledged an update.
+
 ------------------------------------------------------------
  About this README
 ------------------------------------------------------------
