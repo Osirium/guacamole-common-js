@@ -767,6 +767,14 @@ Guacamole.Client = function(tunnel) {
     this.onclipboardoperational = null;
 
     /**
+     * Fired when remote clipboard acknowledges change, used to remove race
+     * conditions.
+     *
+     * @event
+     */
+    this.onclipboardremoteupdate = null;
+
+    /**
      * Fired when the clipboard of the remote client is changing.
      * 
      * @event
@@ -1104,6 +1112,10 @@ Guacamole.Client = function(tunnel) {
 
         "clipboard_operational": function() {
             if (guac_client.onclipboardoperational) guac_client.onclipboardoperational();
+        },
+
+        "clipboard_remote_update": function() {
+            if (guac_client.onclipboardremoteupdate) guac_client.onclipboardremoteupdate();
         },
 
         "clipboard": function(parameters) {
